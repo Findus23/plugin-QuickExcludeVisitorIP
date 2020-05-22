@@ -1,7 +1,7 @@
 {
   "name": "QuickExcludeVisitorIP",
   "description": "Adds a button to Visitor Profile to quickly add them to the list of ignored IPs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "theme": false,
   "require": {
     "piwik": ">=3.10.0,<5.0.0-b1"

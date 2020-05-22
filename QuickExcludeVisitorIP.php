@@ -17,12 +17,12 @@ class QuickExcludeVisitorIP extends Plugin
     public function registerEvents()
     {
         return array(
-            'Live.renderVisitorIcons' => 'handleMyEventInATemplate',
+            'Live.renderVisitorIcons' => 'addLinkToTemplate',
             'AssetManager.getJavaScriptFiles' => 'getJavaScriptFiles',
         );
     }
 
-    public function handleMyEventInATemplate(&$outString, Row $visit)
+    public function addLinkToTemplate(&$outString, Row $visit)
     {
         if (Access::getInstance()->hasSuperUserAccess()) {
             $ip = $visit->getColumn("visitIp");
