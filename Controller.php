@@ -29,7 +29,8 @@ class Controller extends \Piwik\Plugin\Controller
     {
         Piwik::checkUserHasSuperUserAccess();
         @header('Content-Type: application/json; charset=utf-8');
-        $ip = Common::getRequestVar('ip', null, 'string');
+        $request = \Piwik\Request::fromRequest();
+        $ip = $request->getStringParameter('ip', null);
         $ignoredIPstr = APISitesManager::getInstance()->getExcludedIpsGlobal();
         $ignoredIPs = explode(",", $ignoredIPstr);
         if (in_array($ip, $ignoredIPs)) {
